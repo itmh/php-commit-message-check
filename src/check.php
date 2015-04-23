@@ -24,7 +24,7 @@ function check($text)
         $errors[ERR_SUBJECT_REQUIRED] = 1;
     }
 
-    $subject = @$data[0];
+    $subject = trim(@$data[0]);
     if ($subject !== null) {
         if (mb_strlen($subject) > 50) {
             $errors[ERR_SUBJECT_TOO_LONG] = 1;
@@ -40,7 +40,7 @@ function check($text)
         }
     }
 
-    $message = @$data[1];
+    $message = trim(@$data[1]);
     if ($message !== null) {
         $message_first_letter = mb_substr($message, 0, 1);
         if ($message_first_letter !== mb_convert_case($message_first_letter, MB_CASE_UPPER)) {
