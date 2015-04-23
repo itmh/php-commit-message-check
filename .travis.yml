@@ -7,4 +7,7 @@ php:
   - 7
   - hhvm
 
+before_script:
+  - composer install --prefer-source
+
 script: ./vendor/bin/codecept run unit
