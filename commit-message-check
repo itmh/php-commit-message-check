@@ -9,7 +9,13 @@
 require_once __DIR__ . '/src/check.php';
 
 if (!@$argv[1]) {
-    echo 'Находясь в корневой папке проекта, выполните команду';
+    $path = trim(`which commit-message-check`);
+    echo <<<HELP
+Находясь в корневой папке проекта, выполните команду
+ln -s {$path} .git/hooks/commit-msg
+
+HELP;
+
     exit(1);
 }
 
