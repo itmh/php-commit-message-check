@@ -1,0 +1,17 @@
+{
+  "name": "chshanovskiy/commit-message-check",
+  "description": "Simple php tool for checking commit message style guides",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Maxim Chshanovskiy",
+      "email": "chshanovskiy.maxim@gmail.com"
+    }
+  ],
+  "require": {},
+  "require-dev": {
+    "codeception/codeception": "*",
+    "codeception/specify": "*"
+  },
+  "bin": ["commit-check"]
+}

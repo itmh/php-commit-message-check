@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * @param $text string Текст сообщения
+ * @return array Список ошибок
+ */
+
+require_once __DIR__ . '/src/check.php';
+
+if (!@$argv[1]) {
+    exit(1);
+}
+
+$errors = check(file_get_contents($argv[1]));
+
+if (count($errors)) {
+    echo implode(PHP_EOL, array_keys($errors)), PHP_EOL;
+    exit(1);
+}
+
+exit(0);
