@@ -13,5 +13,5 @@
     "codeception/codeception": "*",
     "codeception/specify": "*"
   },
-  "bin": ["commit-check"]
+  "bin": ["commit-message-check"]
 }
