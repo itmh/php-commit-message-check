@@ -64,4 +64,27 @@ MSG;
         $check = check($message);
         $this->assertArrayHasKey(ERR_SUBJECT_WRONG_CASE, $check);
     }
+
+    public function testFailedWhenMessageWrongCase()
+    {
+        $message = <<<MSG
+Содержимое тоже должно начинаться с большой буквы
+
+иначе не очень красиво получается
+MSG;
+        $check = check($message);
+        $this->assertArrayHasKey(ERR_MESSAGE_WRONG_CASE, $check);
+    }
+
+    public function testFailedWhenMessageIsJustLineBreak()
+    {
+        $message = <<<MSG
+Некоторые думают наделать много пустых строк
+
+
+
+MSG;
+        $check = check($message);
+        $this->assertArrayHasKey(ERR_SUBJECT_REQUIRED, $check);
+    }
 }
