@@ -16,7 +16,7 @@ class GeneralTest extends \PHPUnit_Framework_TestCase
 Это образцово показательный коммит
 
 Он содержит заголовк, отделённый пустой строкой
-и расширенное содержимое
+и расширенное содержимое.
 MSG;
         $check = check($message);
         $this->assertTrue(count($check) === 0);
@@ -86,5 +86,16 @@ MSG;
 MSG;
         $check = check($message);
         $this->assertArrayHasKey(ERR_SUBJECT_REQUIRED, $check);
+    }
+
+    public function testFailedWhenMessageWithoutDot()
+    {
+        $message = <<<MSG
+Содержимое должно заканчиваться точкой
+
+Всё-таки законченное предложение, иначе белиберда какая-то
+MSG;
+        $check = check($message);
+        $this->assertArrayHasKey(ERR_MESSAGE_WITHOUT_DOT, $check);
     }
 }
