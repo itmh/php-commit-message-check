@@ -6,11 +6,12 @@ define('ERR_SUBJECT_REDUNDANT_DOT', 'Заголовок не должен зак
 define('ERR_SUBJECT_WRONG_CASE', 'Заголовок должен начинаться с большой буквы');
 define('ERR_MESSAGE_WRONG_CASE', 'Содержимое должно начинаться с большой буквы');
 define('ERR_MESSAGE_WITHOUT_DOT', 'Содержимое должно заканчиваться точкой');
+
 /**
- * @param $text string Текст сообщения
+ * @param string $text Текст сообщения
  * @return array Список ошибок
  */
-function check($text)
+function commit_message_check($text)
 {
     $internal_encoding = mb_internal_encoding();
     mb_internal_encoding('utf-8');

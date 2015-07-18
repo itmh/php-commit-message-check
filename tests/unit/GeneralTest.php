@@ -18,7 +18,7 @@ class GeneralTest extends \PHPUnit_Framework_TestCase
 Он содержит заголовк, отделённый пустой строкой
 и расширенное содержимое.
 MSG;
-        $check = check($message);
+        $check = commit_message_check($message);
         $this->assertTrue(count($check) === 0);
     }
 
@@ -28,7 +28,7 @@ MSG;
 А в этом сообщении тема не отделена
 пустой строкой, поэтому тест провалится
 MSG;
-        $check = check($message);
+        $check = commit_message_check($message);
         $this->assertArrayHasKey(ERR_SUBJECT_REQUIRED, $check);
     }
 
@@ -39,7 +39,7 @@ MSG;
 
 Краткость сестра таланта, ёпта
 MSG;
-        $check = check($message);
+        $check = commit_message_check($message);
         $this->assertArrayHasKey(ERR_SUBJECT_TOO_LONG, $check);
     }
 
@@ -50,7 +50,7 @@ MSG;
 
 Хотя она там совершенно не нужна
 MSG;
-        $check = check($message);
+        $check = commit_message_check($message);
         $this->assertArrayHasKey(ERR_SUBJECT_REDUNDANT_DOT, $check);
     }
 
@@ -61,7 +61,7 @@ MSG;
 
 Это для лучшей читаемости
 MSG;
-        $check = check($message);
+        $check = commit_message_check($message);
         $this->assertArrayHasKey(ERR_SUBJECT_WRONG_CASE, $check);
     }
 
@@ -72,7 +72,7 @@ MSG;
 
 иначе не очень красиво получается
 MSG;
-        $check = check($message);
+        $check = commit_message_check($message);
         $this->assertArrayHasKey(ERR_MESSAGE_WRONG_CASE, $check);
     }
 
@@ -84,7 +84,7 @@ MSG;
 
 
 MSG;
-        $check = check($message);
+        $check = commit_message_check($message);
         $this->assertArrayHasKey(ERR_SUBJECT_REQUIRED, $check);
     }
 
@@ -95,7 +95,7 @@ MSG;
 
 Всё-таки законченное предложение, иначе белиберда какая-то
 MSG;
-        $check = check($message);
+        $check = commit_message_check($message);
         $this->assertArrayHasKey(ERR_MESSAGE_WITHOUT_DOT, $check);
     }
 }

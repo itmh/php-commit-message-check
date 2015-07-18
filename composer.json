@@ -10,8 +10,7 @@
   ],
   "require": {},
   "require-dev": {
-    "codeception/codeception": "*",
-    "codeception/specify": "*"
+    "codeception/codeception": "*"
   },
   "bin": ["commit-message-check"]
 }

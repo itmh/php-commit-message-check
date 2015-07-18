@@ -1,3 +1,3 @@
 <?php
 
-require_once __DIR__ . '/../src/check.php';
+require_once __DIR__ . '/../src/commit_message_check.php';

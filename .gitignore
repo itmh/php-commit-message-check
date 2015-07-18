@@ -1,3 +1,7 @@
 /vendor/
 .idea/*
 tests/_output/*
+tests/_support/_generated
+tests/_support/AcceptanceTester.php
+tests/_support/FunctionalTester.php
+tests/_support/UnitTester.php

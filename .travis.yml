@@ -8,6 +8,6 @@ php:
   - hhvm
 
 before_script:
-  - composer install --prefer-source
+  - composer install --prefer-dist
 
 script: ./vendor/bin/codecept run unit
