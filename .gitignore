@@ -1,5 +1,7 @@
-/vendor/
 .idea/*
+
+/vendor/
+
 tests/_output/*
 tests/_support/_generated
 tests/_support/AcceptanceTester.php
