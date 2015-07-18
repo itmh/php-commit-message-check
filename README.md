@@ -1,5 +1,5 @@
 # commit-message-check
-[![Build Status](https://travis-ci.org/chshanovskiy/commit-message-check.svg?branch=master)](https://travis-ci.org/chshanovskiy/commit-message-check)
+[![Build Status](https://travis-ci.org/itmh/php-commit-message-check.svg?branch=master)](https://travis-ci.org/itmh/php-commit-message-check)
 
 Простая утилита для проверки коммит-сообщения на соответствие некоторым нормам:
 * Сообщение должно состоять из заголовка и содержимого, отделённого пустой строкой
