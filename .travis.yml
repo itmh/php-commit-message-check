@@ -11,4 +11,4 @@ before_script:
   - composer self-update
   - composer install --prefer-dist
 
-script: ./vendor/bin/codecept run unit
+script: ./vendor/bin/codecept build && ./vendor/bin/codecept run unit
